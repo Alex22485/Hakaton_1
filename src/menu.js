@@ -6,14 +6,25 @@ export class ContextMenu extends Menu {
     }
     open(){
 
-        const tasks = ['Аналитика кликов', 'Случайная фигура', 'Таймер отсчета', 'Случайный звук', 'Кастомное сообщение', 'Собственный модуль']
-        tasks.forEach((task) => {
-            const li = document.createElement('li')
-            li.classList ='menu-item'
-            li.textContent = task
-            this.el.append(li)
+        document.addEventListener('contextmenu', event => {
+            this.el.textContent =''
+            console.log(event.target);
+            // блокируем текстовое меню по умолчанию
+            event.preventDefault()
+
+            const tasks = ['Аналитика кликов', 'Случайная фигура', 'Таймер отсчета', 'Случайный звук', 'Кастомное сообщение', 'Собственный модуль']
+            tasks.forEach((task) => {
+                const li = document.createElement('li')
+                li.classList ='menu-item'
+                li.textContent = task
+                this.el.append(li)
+            })
+            this.el.style.display = 'inline'
+
         })
-        this.el.style.display = 'block'
 
     }
+    close() {
+        this.el.style.display = 'none'
+      }
 }
