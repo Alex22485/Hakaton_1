@@ -1,4 +1,5 @@
 import {Menu} from './core/menu'
+import {tasks} from './utils'
 
 export class ContextMenu extends Menu {
     constructor(el){
@@ -11,8 +12,7 @@ export class ContextMenu extends Menu {
             console.log(event.target);
             // блокируем текстовое меню по умолчанию
             event.preventDefault()
-
-            const tasks = ['Аналитика кликов', 'Случайная фигура', 'Таймер отсчета', 'Случайный звук', 'Кастомное сообщение', 'Собственный модуль']
+            
             tasks.forEach((task) => {
                 const li = document.createElement('li')
                 li.classList ='menu-item'
@@ -20,11 +20,12 @@ export class ContextMenu extends Menu {
                 this.el.append(li)
             })
             this.el.style.display = 'inline'
-
         })
-
     }
     close() {
         this.el.style.display = 'none'
-      }
+    }
+    add(){
+    }
+
 }
