@@ -17,13 +17,27 @@ export class Timer extends Module {
             if (enterTime >= 5 && enterTime <= 30) {
                 const secondForTimer = Number(enterTime)
                 timer(secondForTimer)
-
+				this.message(secondForTimer)
             } else {
-
-                alert('Введите количество секунд указанного интервала!')
-
+				alert('Введите количество секунд указанного интервала!')
             }
 		}
-
+	}
+	message(enterTime){
+		const time = (enterTime + 2)* 1000
+		const messageTimer = document.createElement('div')
+		messageTimer.className = 'messageTimer'
+		messageTimer.textContent = 'Время вышло !'
+		setTimeout(() => {
+			document.body.append(messageTimer)
+			this.removeMessage(messageTimer)
+		}, time)
+	}
+	removeMessage(message){
+		setTimeout(() => {
+			// удаление сообщения
+			message.remove()
+		}, 1000)
+		
 	}
 }

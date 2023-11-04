@@ -42,9 +42,19 @@ body {
 }
 
 .seconds{
+	margin-top: 200px;
+	padding: 0;
 	font-size: 300px;
 	text-align: center;
-	position: absolute;
-    top: 50%;
-	left: 50%;
+	font-family: 'Courier New', Courier, monospace;
+	color: rgb(29, 27, 27);
+}
+
+.messageTimer{
+	margin-top: 100px;
+	padding: 0;
+	font-size: 100px;
+	text-align: center;
+	font-family: 'Courier New', Courier, monospace;
+	color: red;
 }
