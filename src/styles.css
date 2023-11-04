@@ -66,3 +66,12 @@ body {
 	color: rgb(12, 167, 30);
 	font-weight: 800;
 }
+
+.messageOfClick{
+	font-size: 50px;
+	text-align: center;
+	font-family: 'Courier New', Courier, monospace;
+	color: rgb(6, 84, 15);
+	font-weight: 800;
+
+}

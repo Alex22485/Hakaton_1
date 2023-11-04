@@ -62,26 +62,24 @@ export function timer (second) {
     const secondHtml = document.createElement('div')
     secondHtml.className = 'seconds'
     
-     const dataNow = Date.now()
-     const dataFinish = Date.now()+second
-     let result = dataFinish - dataNow
+	const dataNow = Date.now()
+    const dataFinish = Date.now()+second
+    let result = dataFinish - dataNow
 
-     let idInt = setInterval(() =>{
-        secondHtml.textContent = ''
+    let idInt = setInterval(() =>{
+		secondHtml.textContent = ''
         secondHtml.textContent = result
         document.body.append(secondHtml)
-        result = result - 1
+		result = result - 1
         chesk(result,idInt,secondHtml)
-     }, 1000)
+	}, 1000)
 }
 
- function chesk(result,idInt,secondHtml){
-    if (result === -2){
-        // останов setInterval
+function chesk(result,idInt,secondHtml){
+	if (result === -2){
+		// останов setInterval
         clearInterval(idInt)
         secondHtml.remove()
-
-
     }
 }
 
