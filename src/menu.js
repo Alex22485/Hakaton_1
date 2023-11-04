@@ -8,10 +8,11 @@ export class ContextMenu extends Menu {
 
 	open() {
 		document.addEventListener('contextmenu', event => {
-			this.el.textContent = '';
-			console.log(event.target);
-			// блокируем текстовое меню по умолчанию
 			event.preventDefault();
+			this.el.textContent = '';
+			this.el.style.position = 'fixed';
+			this.el.style.left = event.clientX + 'px';
+			this.el.style.top = event.clientY + 'px';
 
 			tasks.forEach(task => {
 				const li = document.createElement('li');

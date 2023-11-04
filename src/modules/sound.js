@@ -17,6 +17,9 @@ export class Sound extends Module {
 			} else {
 				let randomSong = random(0, SOUNDPATHPARAMS.length - 1);
 				this.audio = new Audio(`${SOUNDURL}${SOUNDPATHPARAMS[randomSong]}.mp3`);
+				this.audio.addEventListener('ended', () => {
+					this.bool = false;
+				});
 				this.audio.volume = 1;
 				this.audio.play();
 				this.bool = true;
