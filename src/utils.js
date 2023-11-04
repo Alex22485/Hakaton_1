@@ -11,7 +11,6 @@ export const tasks = [
 	'Кастомное сообщение',
 	'Собственный модуль'
 ];
-
 // рандомный цвет фона
 export const getRandonColor = () => {
 	let elem = 'RGB(';
@@ -86,4 +85,25 @@ export function timer (second) {
     }
 }
 
-
+export const MESSAGES = [
+	'Привет!',
+	'Hello!',
+	'Как дела?',
+	'How are you?',
+	'Что нового?',
+	"What's new?",
+	'Хорошего дня!',
+	'Have a nice day!',
+	'Добро пожаловать!',
+	'Welcome!',
+	'Как прошел день?',
+	'How was your day?',
+	'Удачи!',
+	'Good luck!',
+	'Какой у тебя план на сегодня?',
+	"What's your plan for today?",
+	'Спасибо!',
+	'Thank you!',
+	'Приятно познакомиться!',
+	'Nice to meet you!'
+];

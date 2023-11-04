@@ -15,7 +15,7 @@ export class ShapeModule extends Module {
 			const body = document.querySelector('body');
 			const shape = document.createElement('div');
 			shape.classList = `shape${random(0, 43)}`;
-			shape.position = 'absolute';
+			shape.style.position = 'absolute';
 			shape.style.top = `${random(100, screenHeight - 100)}px`;
 			shape.style.left = `${random(100, screenWidth - 100)}px`;
 			body.append(shape);
