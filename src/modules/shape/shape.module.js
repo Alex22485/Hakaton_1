@@ -10,9 +10,7 @@ export class ShapeModule extends Module {
 	trigger(textContent) {
 		if (textContent === tasks[1]) {
 			let screenWidth = window.innerWidth;
-			console.log('screenWidth: ', screenWidth);
 			let screenHeight = window.innerHeight;
-			console.log('screenHeight: ', screenHeight);
 			const body = document.querySelector('body');
 			const shape = document.createElement('div');
 			shape.classList = `shape${random(0, 43)}`;
