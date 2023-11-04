@@ -5,6 +5,7 @@ export class ContextMenu extends Menu {
 	constructor(el) {
 		super(el);
 	}
+
 	open() {
 		document.addEventListener('contextmenu', event => {
 			this.el.textContent = '';
