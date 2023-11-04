@@ -5,6 +5,7 @@ export class ContextMenu extends Menu {
 	constructor(el) {
 		super(el);
 	}
+
 	open() {
 		document.addEventListener('contextmenu', event => {
 			this.el.textContent = '';
@@ -22,7 +23,7 @@ export class ContextMenu extends Menu {
 		});
 	}
 	close() {
-		this.el.styleisplay = 'none';
+		this.el.style.display = 'none';
 	}
 	add() {}
 }
