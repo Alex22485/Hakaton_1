@@ -1,7 +1,7 @@
 import { Module } from '../../core/module';
 import { tasks, random } from '../../utils';
 import './shape.css';
-import { сontextMenu } from '../../app'
+import { contextMenu } from '../../app'
 export class ShapeModule extends Module {
 	constructor(type, text) {
 		super(type, text);
@@ -20,7 +20,7 @@ export class ShapeModule extends Module {
 			shape.style.left = `${random(100, screenWidth - 100)}px`;
 			body.append(shape);
 			// закрываем конеткстное меню
-			сontextMenu.close()
+			contextMenu.close()
 		}
 	}
 }
