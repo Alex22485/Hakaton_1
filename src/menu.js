@@ -22,7 +22,7 @@ export class ContextMenu extends Menu {
 		});
 	}
 	close() {
-		this.el.styleisplay = 'none';
+		this.el.style.display = 'none';
 	}
 	add() {}
 }

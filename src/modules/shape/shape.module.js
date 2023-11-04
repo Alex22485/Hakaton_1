@@ -1,6 +1,7 @@
 import { Module } from '../../core/module';
 import { tasks, random } from '../../utils';
 import './shape.css';
+import { сontextMenu } from '../../app'
 export class ShapeModule extends Module {
 	constructor(type, text) {
 		super(type, text);
@@ -8,7 +9,9 @@ export class ShapeModule extends Module {
 	trigger(textContent) {
 		if (textContent === tasks[1]) {
 			let screenWidth = window.innerWidth;
+			console.log('screenWidth: ', screenWidth);
 			let screenHeight = window.innerHeight;
+			console.log('screenHeight: ', screenHeight);
 			const body = document.querySelector('body');
 			const shape = document.createElement('div');
 			shape.classList = `shape${random(0, 50)}`;
@@ -16,6 +19,8 @@ export class ShapeModule extends Module {
 			shape.style.top = `${random(100, screenHeight - 100)}px`;
 			shape.style.left = `${random(100, screenWidth - 100)}px`;
 			body.append(shape);
+			// закрываем конеткстное меню
+			сontextMenu.close()
 		}
 	}
 }

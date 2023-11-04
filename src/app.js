@@ -8,8 +8,8 @@ import { BackgroundModule } from './modules/background.module';
 import { Message } from './modules/message';
 
 // Отображение меню
-const openMenu = new ContextMenu('.menu');
-openMenu.open();
+export const сontextMenu = new ContextMenu('.menu');
+сontextMenu.open();
 
 const clicksModule = new ClicksModule('тип', 'текст');
 const shapeModule = new ShapeModule('тип', 'текст');
