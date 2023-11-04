@@ -12,7 +12,7 @@ export const tasks = [
 	'Собственный модуль'
 ];
 
-// рандомный цвет она
+// рандомный цвет фона
 export const getRandonColor = () => {
 	let elem = 'RGB(';
 	for (let i = 1; i < 4; i++) {
@@ -23,6 +23,7 @@ export const getRandonColor = () => {
 	return randomElem;
 };
 
+// для модуля звука
 export const SOUNDURL = 'https://cdn.freesound.org/previews/';
 export const SOUNDPATHPARAMS = [
 	'708/708781_5674468-lq',
@@ -56,3 +57,33 @@ export const SOUNDPATHPARAMS = [
 	'708/708462_15367714-lq',
 	'708/708460_15367714-lq'
 ];
+
+//таймер времени
+export function timer (second) {
+    const secondHtml = document.createElement('div')
+    secondHtml.className = 'seconds'
+    
+     const dataNow = Date.now()
+     const dataFinish = Date.now()+second
+     let result = dataFinish - dataNow
+
+     let idInt = setInterval(() =>{
+        secondHtml.textContent = ''
+        secondHtml.textContent = result
+        document.body.append(secondHtml)
+        result = result - 1
+        chesk(result,idInt,secondHtml)
+     }, 1000)
+}
+
+ function chesk(result,idInt,secondHtml){
+    if (result === -2){
+        // останов setInterval
+        clearInterval(idInt)
+        secondHtml.remove()
+
+
+    }
+}
+
+
