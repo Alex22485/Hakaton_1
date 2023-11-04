@@ -1,6 +1,7 @@
 import { Module } from '../core/module';
 import { tasks } from '../utils';
 import { random, SOUNDURL, SOUNDPATHPARAMS } from '../utils';
+import {contextMenu} from '../app'
 export class Sound extends Module {
 	constructor(type, text) {
 		super(type, text);
@@ -24,6 +25,8 @@ export class Sound extends Module {
 				this.audio.play();
 				this.bool = true;
 			}
+			// закрываем контекстное меню
+			contextMenu.close()
 		}
 	}
 }
