@@ -58,3 +58,11 @@ body {
 	font-family: 'Courier New', Courier, monospace;
 	color: red;
 }
+
+.messageRandome{
+	font-size: 50px;
+	text-align: center;
+	font-family: 'Courier New', Courier, monospace;
+	color: rgb(12, 167, 30);
+	font-weight: 800;
+}

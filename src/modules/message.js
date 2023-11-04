@@ -1,6 +1,7 @@
 import { Module } from '../core/module';
 import { tasks, MESSAGES } from '../utils';
 import { random } from '../utils';
+import { timer } from '../utils'
 import { contextMenu } from '../app';
 
 export class Message extends Module {
@@ -9,17 +10,29 @@ export class Message extends Module {
 	}
 	trigger(textContent) {
 		if (textContent === tasks[5]) {
+			const randomInterval = random(5,10)
+			timer(randomInterval)
 			let screenWidth = window.innerWidth;
 			let screenHeight = window.innerHeight;
 			const body = document.querySelector('body');
 			const divMessage = document.createElement('div');
+			divMessage.className = 'messageRandome'
 			divMessage.style.position = 'absolute';
 			divMessage.style.top = `${random(100, screenHeight - 100)}px`;
 			divMessage.style.left = `${random(100, screenWidth - 100)}px`;
 			divMessage.textContent = MESSAGES[random(0, MESSAGES.length - 1)];
 			body.append(divMessage);
 
+			this.removeMessage(randomInterval,divMessage)
+
 			contextMenu.close();
 		}
+	}
+	removeMessage(randomInterval,divMessage){
+		const time = (randomInterval + 2)* 1000
+		setTimeout(() => {
+			divMessage.remove()
+		}, time)
+
 	}
 }
