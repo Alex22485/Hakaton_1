@@ -13,7 +13,6 @@ export class Message extends Module {
 			// блокировка открывания меню если не выполнился модуль
 			contextMenu.start = false
 			const randomInterval = random(1,2)
-			timer(randomInterval)
 			let screenWidth = window.innerWidth;
 			let screenHeight = window.innerHeight;
 			const body = document.querySelector('body');
@@ -23,6 +22,7 @@ export class Message extends Module {
 			divMessage.style.top = `${random(150, screenHeight - 150)}px`;
 			divMessage.style.left = `${random(200, screenWidth - 200)}px`;
 			divMessage.textContent = MESSAGES[random(0, MESSAGES.length - 1)];
+			console.log('MESSAGES[random(0, MESSAGES.length - 1)]: ', MESSAGES[random(0, MESSAGES.length - 1)]);
 			body.append(divMessage);
 
 			this.removeMessage(randomInterval,divMessage)
@@ -31,7 +31,7 @@ export class Message extends Module {
 		}
 	}
 	removeMessage(randomInterval,divMessage){
-		const time = (randomInterval + 2)* 1000
+		const time = (randomInterval)* 1000
 		setTimeout(() => {
 			divMessage.remove()
 			// разблокировка меню

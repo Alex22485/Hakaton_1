@@ -30,7 +30,7 @@ body {
 
 .menu .menu-item {
 	padding: 8px 10px;
-	font-size: 1rem;
+	font-size: 0.7rem;
 	color: #eee;
 	cursor: pointer;
 	transition: background-color 0.2s ease-in;
@@ -44,7 +44,7 @@ body {
 .seconds{
 	margin-top: 200px;
 	padding: 0;
-	font-size: 300px;
+	font-size: 100px;
 	text-align: center;
 	font-family: 'Courier New', Courier, monospace;
 	color: rgb(29, 27, 27);
@@ -53,14 +53,14 @@ body {
 .messageTimer{
 	margin-top: 100px;
 	padding: 0;
-	font-size: 100px;
+	font-size: 25px;
 	text-align: center;
 	font-family: 'Courier New', Courier, monospace;
 	color: red;
 }
 
 .messageRandome{
-	font-size: 50px;
+	font-size: 25px;
 	text-align: center;
 	font-family: 'Courier New', Courier, monospace;
 	color: rgb(12, 167, 30);
