@@ -7,11 +7,10 @@ export class Timer extends Module {
 		super(type, text);
 	}
 	trigger(textContent) {
-
 		if (textContent === tasks[2]) {
 			// блокировка открывания меню если не выполнился модуль
-			contextMenu.start = false
-			contextMenu.close()
+			contextMenu.start = false;
+			contextMenu.close();
 
 			const body = document.querySelector('body');
 			const modal = document.createElement('form');
@@ -56,10 +55,9 @@ export class Timer extends Module {
 	removeMessage(message) {
 		setTimeout(() => {
 			// удаление сообщения
-			message.remove()
+			message.remove();
 			// разблокировка меню
-			contextMenu.start = true
-		}, 1000)
-		
+			contextMenu.start = true;
+		}, 1000);
 	}
 }

@@ -15,7 +15,7 @@ export class ClicksModule extends Module {
 	trigger(textContent) {
 		if (textContent === tasks[0]) {
 			// блокировка открывания меню если не выполнился модуль
-			contextMenu.start = false
+			contextMenu.start = false;
 			if (this.bool) {
 				contextMenu.close();
 			} else {
@@ -60,7 +60,7 @@ export class ClicksModule extends Module {
 			// удаление сообщения
 			message.remove();
 			// разблокировка меню
-			contextMenu.start = true
+			contextMenu.start = true;
 		}, 3000);
 	}
 }

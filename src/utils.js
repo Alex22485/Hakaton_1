@@ -120,11 +120,14 @@ export function createShapeAndMessage(shape = false, message = false) {
 	} else if (message) {
 		divShapeOrMessage.className = 'messageRandome';
 		divShapeOrMessage.textContent = MESSAGES[random(0, MESSAGES.length - 1)];
-		console.log('MESSAGES[random(0, MESSAGES.length - 1)]: ', MESSAGES[random(0, MESSAGES.length - 1)]);
-	};
+		console.log(
+			'MESSAGES[random(0, MESSAGES.length - 1)]: ',
+			MESSAGES[random(0, MESSAGES.length - 1)]
+		);
+	}
 
 	document.body.append(divShapeOrMessage);
 
 	// return используется только для удаления фигуры в shape.module.js
-	return divShapeOrMessage
-};
+	return divShapeOrMessage;
+}
