@@ -4,23 +4,31 @@ import { tasks } from './utils';
 export class ContextMenu extends Menu {
 	constructor(el) {
 		super(el);
+		this.start = true
 	}
 
 	open() {
 		document.addEventListener('contextmenu', event => {
 			event.preventDefault();
-			this.el.textContent = '';
-			this.el.style.position = 'fixed';
-			this.el.style.left = event.clientX + 'px';
-			this.el.style.top = event.clientY + 'px';
+			
+			// блокировка открытия меню если модуль не
+			if(this.start){
+				console.log('this.start3', this.start);
+				
+				this.el.textContent = '';
+				this.el.style.position = 'fixed';
+				this.el.style.left = event.clientX + 'px';
+				this.el.style.top = event.clientY + 'px';
+	
+				tasks.forEach(task => {
+					const li = document.createElement('li');
+					li.classList = 'menu-item';
+					li.textContent = task;
+					this.el.append(li);
+				});
+				this.el.style.display = 'inline';
+			}
 
-			tasks.forEach(task => {
-				const li = document.createElement('li');
-				li.classList = 'menu-item';
-				li.textContent = task;
-				this.el.append(li);
-			});
-			this.el.style.display = 'inline';
 		});
 	}
 	close() {
