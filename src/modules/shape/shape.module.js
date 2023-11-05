@@ -2,6 +2,8 @@ import { Module } from '../../core/module';
 import { tasks, random } from '../../utils';
 import './shape.css';
 import { contextMenu } from '../../app';
+import { getRandonColor } from '../../utils';
+import { createShapeAndMessage } from '../../utils';
 
 export class ShapeModule extends Module {
 	constructor(type, text) {
@@ -12,15 +14,8 @@ export class ShapeModule extends Module {
 	trigger(textContent) {
 
 		if (textContent === tasks[1]) {
-			let screenWidth = window.innerWidth;
-			let screenHeight = window.innerHeight;
-			const body = document.querySelector('body');
-			const shape = document.createElement('div');
-			shape.classList = `shape${random(0, 43)}`;
-			shape.style.position = 'absolute';
-			shape.style.top = `${random(150, screenHeight - 150)}px`;
-			shape.style.left = `${random(200, screenWidth - 200)}px`;
-			body.append(shape);
+			createShapeAndMessage(true, false);
+
 			// закрываем конеткстное меню
 			contextMenu.close();
 
