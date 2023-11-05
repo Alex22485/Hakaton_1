@@ -1,13 +1,11 @@
 import { Menu } from './core/menu';
 import { tasks } from './utils';
-import { shapeModule } from './app';
-
+import { backgroundModule, shapeModule } from './app';
 export class ContextMenu extends Menu {
 	constructor(el) {
 		super(el);
 		this.start = true;
 	}
-
 	open() {
 		const screenWidth =
 			window.innerWidth ||
@@ -17,16 +15,22 @@ export class ContextMenu extends Menu {
 			window.innerHeight ||
 			document.documentElement.clientHeight ||
 			document.body.clientHeight;
+		// вызов контекстного меню
 		document.addEventListener('contextmenu', event => {
 			event.preventDefault();
-
-			// удаление фигуры из HTML
+			// удаление фигуры из HTML (для модуля shape.module.js)
 			if (!shapeModule.showFigure) {
 				shapeModule.shape.remove();
 				shapeModule.showFigure = true;
 			}
+			// удаление измененного фона при повторном вызове меню
+			if(!backgroundModule.changeColor){
+				document.body.style = 'RGD(0,0,0)'
+				backgroundModule.changeColor = true
 
-			// блокировка открытия меню если модуль не
+			}
+			// блокировка открытия меню если модули выполняют свой функционал для
+			// для timer, message, click.module.
 			if (this.start) {
 				const clickX = event.clientX;
 				const clickY = event.clientY;
@@ -53,7 +57,6 @@ export class ContextMenu extends Menu {
 				} else {
 					this.el.style.top = clickY + 'px';
 				}
-				// console.log(menuWidth, meniHeight);
 			}
 		});
 	}

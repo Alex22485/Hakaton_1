@@ -1,6 +1,5 @@
 import { Module } from '../core/module';
-import { tasks } from '../utils';
-import { random, SOUNDURL, SOUNDPATHPARAMS } from '../utils';
+import { tasks,random, SOUNDURL, SOUNDPATHPARAMS } from '../utils';
 import { contextMenu } from '../app';
 export class Sound extends Module {
 	constructor(type, text) {
@@ -8,7 +7,6 @@ export class Sound extends Module {
 		this.bool = false;
 		this.audio = null;
 	}
-
 	trigger(textContent) {
 		if (textContent === tasks[3]) {
 			console.log(this.bool);

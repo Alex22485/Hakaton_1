@@ -1,6 +1,5 @@
 import { Module } from '../core/module';
-import { tasks } from '../utils';
-import { timer } from '../utils';
+import { tasks, timer } from '../utils';
 import { contextMenu } from '../app';
 export class Timer extends Module {
 	constructor(type, text) {

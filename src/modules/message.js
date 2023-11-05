@@ -1,9 +1,6 @@
 import { Module } from '../core/module';
-import { tasks } from '../utils';
-import { random } from '../utils';
+import { tasks, random, createShapeAndMessage } from '../utils';
 import { contextMenu } from '../app';
-import { createShapeAndMessage } from '../utils';
-
 export class Message extends Module {
 	constructor(type, text) {
 		super(type, text);
@@ -18,7 +15,7 @@ export class Message extends Module {
 
 			const messageRandome = document.querySelector('.messageRandome');
 			this.removeMessage(randomInterval, messageRandome);
-
+			// закрываем контекстное меню
 			contextMenu.close();
 		}
 	}

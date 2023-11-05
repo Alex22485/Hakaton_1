@@ -1,7 +1,7 @@
 export function random(min, max) {
 	return Math.round(min - 0.5 + Math.random() * (max - min + 1));
 }
-
+// содержимое меню
 export const tasks = [
 	'Аналитика кликов',
 	'Случайная фигура',
@@ -17,10 +17,8 @@ export const getRandonColor = () => {
 		elem += `${255 - Math.round(Math.random() * 100)},`;
 	}
 	let randomElem = elem.slice(0, -1) + ')';
-
 	return randomElem;
 };
-
 // для модуля звука
 export const SOUNDURL = 'https://cdn.freesound.org/previews/';
 export const SOUNDPATHPARAMS = [
@@ -55,7 +53,6 @@ export const SOUNDPATHPARAMS = [
 	'708/708462_15367714-lq',
 	'708/708460_15367714-lq'
 ];
-
 //таймер времени
 export function timer(second) {
 	const secondHtml = document.createElement('div');
@@ -74,7 +71,6 @@ export function timer(second) {
 		chesk(result, idInt, secondHtml);
 	}, 1000);
 }
-
 function chesk(result, idInt, secondHtml) {
 	if (result === -2) {
 		// останов setInterval
@@ -82,7 +78,7 @@ function chesk(result, idInt, secondHtml) {
 		secondHtml.remove();
 	}
 }
-
+// для модуля message
 export const MESSAGES = [
 	'Привет!',
 	'Hello!',
@@ -105,8 +101,7 @@ export const MESSAGES = [
 	'Приятно познакомиться!',
 	'Nice to meet you!'
 ];
-
-// создание фигуры или сообщения
+// создание фигуры или сообщения для shape.module и message
 export function createShapeAndMessage(shape = false, message = false) {
 	let screenWidth = window.innerWidth;
 	let screenHeight = window.innerHeight;
@@ -120,14 +115,8 @@ export function createShapeAndMessage(shape = false, message = false) {
 	} else if (message) {
 		divShapeOrMessage.className = 'messageRandome';
 		divShapeOrMessage.textContent = MESSAGES[random(0, MESSAGES.length - 1)];
-		console.log(
-			'MESSAGES[random(0, MESSAGES.length - 1)]: ',
-			MESSAGES[random(0, MESSAGES.length - 1)]
-		);
 	}
-
 	document.body.append(divShapeOrMessage);
-
 	// return используется только для удаления фигуры в shape.module.js
 	return divShapeOrMessage;
 }
