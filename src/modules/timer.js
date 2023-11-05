@@ -12,7 +12,6 @@ export class Timer extends Module {
 			// блокировка открывания меню если не выполнился модуль
 			contextMenu.start = false
 			contextMenu.close()
-			console.log(tasks[2]);
 
 			const body = document.querySelector('body');
 			const modal = document.createElement('form');
@@ -32,9 +31,9 @@ export class Timer extends Module {
 			modal.addEventListener('submit', event => {
 				event.preventDefault();
 				let enterTime = input.value;
-				modal.remove();
 				console.log(enterTime);
 				if (enterTime >= 5 && enterTime <= 30) {
+					modal.remove();
 					const secondForTimer = Number(enterTime);
 					timer(secondForTimer);
 					this.message(secondForTimer);
