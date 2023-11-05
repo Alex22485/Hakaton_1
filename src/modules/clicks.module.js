@@ -20,7 +20,7 @@ export class ClicksModule extends Module {
 				const randomInterval = random(5, 10);
 				timer(randomInterval);
 				let startClick = true;
-				document.body.removeEventListener('click', this.handleClick);
+
 				if (startClick) {
 					// Сообщение о количесвте кликов
 					this.messageAboutClick(randomInterval);
@@ -48,6 +48,7 @@ export class ClicksModule extends Module {
 			this.clicks = 0;
 			console.log('this.clicks: ', this.clicks);
 			this.removeMessage(messageOfClick);
+			document.body.removeEventListener('click', this.handleClick);
 			this.bool = false;
 		}, time);
 	}
