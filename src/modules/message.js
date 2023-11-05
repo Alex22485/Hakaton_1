@@ -18,8 +18,8 @@ export class Message extends Module {
 			const divMessage = document.createElement('div');
 			divMessage.className = 'messageRandome'
 			divMessage.style.position = 'absolute';
-			divMessage.style.top = `${random(100, screenHeight - 100)}px`;
-			divMessage.style.left = `${random(100, screenWidth - 100)}px`;
+			divMessage.style.top = `${random(150, screenHeight - 150)}px`;
+			divMessage.style.left = `${random(200, screenWidth - 200)}px`;
 			divMessage.textContent = MESSAGES[random(0, MESSAGES.length - 1)];
 			body.append(divMessage);
 
