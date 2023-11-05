@@ -13,8 +13,6 @@ export class ContextMenu extends Menu {
 			
 			// блокировка открытия меню если модуль не
 			if(this.start){
-				console.log('this.start3', this.start);
-				
 				this.el.textContent = '';
 				this.el.style.position = 'fixed';
 				this.el.style.left = event.clientX + 'px';

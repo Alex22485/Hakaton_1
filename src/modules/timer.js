@@ -7,7 +7,11 @@ export class Timer extends Module {
 		super(type, text);
 	}
 	trigger(textContent) {
+
 		if (textContent === tasks[2]) {
+			// блокировка открывания меню если не выполнился модуль
+			contextMenu.start = false
+			
 			contextMenu.close()
 			console.log(tasks[2]);
 			// закрываем контекстное меню
@@ -37,6 +41,8 @@ export class Timer extends Module {
 		setTimeout(() => {
 			// удаление сообщения
 			message.remove()
+			// разблокировка меню
+			contextMenu.start = true
 		}, 1000)
 		
 	}

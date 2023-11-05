@@ -9,11 +9,10 @@ export class Message extends Module {
 		super(type, text);
 	}
 	trigger(textContent) {
-		// блокировка открывания меню если не выполнился модуль
-		contextMenu.start = false
-
 		if (textContent === tasks[5]) {
-			const randomInterval = random(5,10)
+			// блокировка открывания меню если не выполнился модуль
+			contextMenu.start = false
+			const randomInterval = random(1,2)
 			timer(randomInterval)
 			let screenWidth = window.innerWidth;
 			let screenHeight = window.innerHeight;
@@ -35,6 +34,7 @@ export class Message extends Module {
 		const time = (randomInterval + 2)* 1000
 		setTimeout(() => {
 			divMessage.remove()
+			// разблокировка меню
 			contextMenu.start = true
 		}, time)
 

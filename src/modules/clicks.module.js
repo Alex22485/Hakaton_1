@@ -14,6 +14,8 @@ export class ClicksModule extends Module {
 
 	trigger(textContent) {
 		if (textContent === tasks[0]) {
+			// блокировка открывания меню если не выполнился модуль
+			contextMenu.start = false
 			if (this.bool) {
 				contextMenu.close();
 			} else {
@@ -39,7 +41,7 @@ export class ClicksModule extends Module {
 	}
 
 	messageAboutClick(randomInterval) {
-		const time = (randomInterval + 1) * 1000;
+		const time = (randomInterval + 2) * 1000;
 		setTimeout(() => {
 			const messageOfClick = document.createElement('div');
 			messageOfClick.className = 'messageOfClick';
@@ -57,6 +59,8 @@ export class ClicksModule extends Module {
 		setTimeout(() => {
 			// удаление сообщения
 			message.remove();
-		}, 4000);
+			// разблокировка меню
+			contextMenu.start = true
+		}, 3000);
 	}
 }
