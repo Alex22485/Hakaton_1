@@ -1,7 +1,6 @@
 import { Module } from '../core/module';
 import { tasks, MESSAGES } from '../utils';
 import { random } from '../utils';
-import { timer } from '../utils'
 import { contextMenu } from '../app';
 
 export class Message extends Module {

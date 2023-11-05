@@ -12,7 +12,7 @@ export const contextMenu = new ContextMenu('.menu');
 contextMenu.open();
 
 const clicksModule = new ClicksModule('тип', 'текст');
-const shapeModule = new ShapeModule('тип', 'текст');
+export const shapeModule = new ShapeModule('тип', 'текст');
 const timer = new Timer('тип', 'текст');
 const sound = new Sound('тип', 'текст');
 const backgroundModule = new BackgroundModule('тип', 'текст');

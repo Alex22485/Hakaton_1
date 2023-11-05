@@ -1,5 +1,6 @@
 import { Menu } from './core/menu';
 import { tasks } from './utils';
+import { shapeModule } from './app'
 
 export class ContextMenu extends Menu {
 	constructor(el) {
@@ -10,6 +11,12 @@ export class ContextMenu extends Menu {
 	open() {
 		document.addEventListener('contextmenu', event => {
 			event.preventDefault();
+			
+			// удаление фигуры из HTML
+			if(!shapeModule.showFigure){
+				shapeModule.shape.remove()
+				shapeModule.showFigure = true
+			}
 			
 			// блокировка открытия меню если модуль не
 			if(this.start){

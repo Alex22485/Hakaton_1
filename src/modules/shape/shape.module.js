@@ -6,8 +6,11 @@ import { contextMenu } from '../../app';
 export class ShapeModule extends Module {
 	constructor(type, text) {
 		super(type, text);
+		this.showFigure = true
+		this.shape = null
 	}
 	trigger(textContent) {
+
 		if (textContent === tasks[1]) {
 			let screenWidth = window.innerWidth;
 			let screenHeight = window.innerHeight;
@@ -20,6 +23,15 @@ export class ShapeModule extends Module {
 			body.append(shape);
 			// закрываем конеткстное меню
 			contextMenu.close();
+
+			// для удаления фигуры при последующем вызове меню
+			// сама реализация в menu.js
+			this.showFigure = false
+			this.shape = shape
 		}
 	}
+	// sendShapeHtmlToMenuJs(shape){
+	// 	return shape
+
+	// }
 }
