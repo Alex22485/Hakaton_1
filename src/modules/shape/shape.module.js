@@ -1,8 +1,7 @@
 import { Module } from '../../core/module';
-import { tasks, random } from '../../utils';
+import { tasks } from '../../utils';
 import './shape.css';
 import { contextMenu } from '../../app';
-import { getRandonColor } from '../../utils';
 import { createShapeAndMessage } from '../../utils';
 
 export class ShapeModule extends Module {
@@ -14,7 +13,7 @@ export class ShapeModule extends Module {
 	trigger(textContent) {
 
 		if (textContent === tasks[1]) {
-			createShapeAndMessage(true, false);
+			// createShapeAndMessage(true, false);
 
 			// закрываем конеткстное меню
 			contextMenu.close();
@@ -22,11 +21,9 @@ export class ShapeModule extends Module {
 			// для удаления фигуры при последующем вызове меню
 			// сама реализация в menu.js
 			this.showFigure = false
-			this.shape = shape
+			// запись в конструктор отображаемой фигуры и
+			// создание фигуры в HTML
+			this.shape = createShapeAndMessage(true, false);
 		}
 	}
-	// sendShapeHtmlToMenuJs(shape){
-	// 	return shape
-
-	// }
 }

@@ -125,4 +125,7 @@ export function createShapeAndMessage(shape = false, message = false) {
 	};
 
 	document.body.append(divShapeOrMessage);
+
+	// return используется только для удаления фигуры в shape.module.js
+	return divShapeOrMessage
 };
