@@ -26,14 +26,17 @@ export class ClicksModule extends Module {
              contextMenu.close()
         }
     }
-    messageAboutClick(randomInterval,clicks){
+    messageAboutClick(randomInterval){
 		const time = (randomInterval + 1 )* 1000
 		setTimeout(() => {
 			const messageOfClick = document.createElement('div')
             messageOfClick.className = 'messageOfClick'
             messageOfClick.textContent = `Сделано ${this.clicks} кликов`
             document.body.append(messageOfClick)
+            this.clicks = 0
+            console.log('this.clicks: ', this.clicks);
             this.removeMessage(messageOfClick)
+            
 		}, time)
 
 	}
