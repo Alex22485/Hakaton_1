@@ -2,7 +2,6 @@ import { Module } from '../../core/module';
 import { tasks, random } from '../../utils';
 import './shape.css';
 import { contextMenu } from '../../app';
-import { getRandonColor } from '../../utils';
 
 export class ShapeModule extends Module {
 	constructor(type, text) {
