@@ -12,7 +12,7 @@ export class Timer extends Module {
 			console.log(tasks[2]);
 
 			const body = document.querySelector('body');
-			const modal = document.createElement('div');
+			const modal = document.createElement('form');
 			modal.classList = 'timerModal';
 			const input = document.createElement('input');
 			input.classList = 'timerInput';
@@ -26,15 +26,19 @@ export class Timer extends Module {
 			body.append(modal);
 			modal.append(descr, input, btn);
 
-			// const enterTime = prompt(`Введите количество секунд от 5 до 30:`);
-
-			// if (enterTime >= 5 && enterTime <= 30) {
-			// 	const secondForTimer = Number(enterTime);
-			// 	timer(secondForTimer);
-			// 	this.message(secondForTimer);
-			// } else {
-			// 	alert('Введите количество секунд указанного интервала!');
-			// }
+			modal.addEventListener('submit', event => {
+				event.preventDefault();
+				let enterTime = input.value;
+				modal.remove();
+				console.log(enterTime);
+				if (enterTime >= 5 && enterTime <= 30) {
+					const secondForTimer = Number(enterTime);
+					timer(secondForTimer);
+					this.message(secondForTimer);
+				} else {
+					alert('Введите количество секунд указанного интервала!');
+				}
+			});
 		}
 	}
 	message(enterTime) {
