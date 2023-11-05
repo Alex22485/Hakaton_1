@@ -16,8 +16,8 @@ export class ShapeModule extends Module {
 			const shape = document.createElement('div');
 			shape.classList = `shape${random(0, 43)}`;
 			shape.style.position = 'absolute';
-			shape.style.top = `${random(100, screenHeight - 100)}px`;
-			shape.style.left = `${random(100, screenWidth - 100)}px`;
+			shape.style.top = `${random(150, screenHeight - 150)}px`;
+			shape.style.left = `${random(200, screenWidth - 200)}px`;
 			body.append(shape);
 			// закрываем конеткстное меню
 			contextMenu.close();
