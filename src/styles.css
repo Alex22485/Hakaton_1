@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
 * {
+	font-family: 'Roboto', sans-serif;
+}
+
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -41,7 +45,7 @@ body {
 	background: #343434;
 }
 
-.seconds{
+.seconds {
 	margin-top: 200px;
 	padding: 0;
 	font-size: 100px;
@@ -50,7 +54,7 @@ body {
 	color: rgb(29, 27, 27);
 }
 
-.messageTimer{
+.messageTimer {
 	margin-top: 100px;
 	padding: 0;
 	font-size: 25px;
@@ -60,18 +64,70 @@ body {
 }
 
 .messageRandome{
-	font-size: 25px;
+	font-size: 50px;
 	text-align: center;
 	font-family: 'Courier New', Courier, monospace;
 	color: rgb(12, 167, 30);
 	font-weight: 800;
 }
 
-.messageOfClick{
+.messageOfClick {
 	font-size: 50px;
 	text-align: center;
 	font-family: 'Courier New', Courier, monospace;
 	color: rgb(6, 84, 15);
 	font-weight: 800;
+}
 
+.timerModal {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 380px;
+	width: 95%;
+	min-height: 250px;
+	background-color: #f2f2f2;
+	padding: 38px 40px 40px 40px;
+	gap: 20px;
+	border-radius: 6px;
+}
+
+.timerBtn {
+	width: 150px;
+	height: 30px;
+	background-color: red;
+	border-radius: 5px;
+	border: none;
+	font-size: 12px;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #ffffff;
+	transition: 0.5s all;
+}
+
+.timerBtn:hover {
+	box-shadow: 3px 3px 20px red;
+	border: none;
+}
+
+.descr {
+	font-size: 14px;
+	font-weight: 500;
+	color: #0d0d0d;
+	text-align: center;
+}
+
+.timerInput {
+	width: 303px;
+	height: 54px;
+	font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	border-radius: 6px;
+	line-height: 66px;
 }
