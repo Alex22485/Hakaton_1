@@ -12,7 +12,6 @@
 
 body {
 	font-size: 14px;
-	font-family: 'Roboto', sans-serif;
 	height: 100vh;
 	width: 100%;
 	padding: 2rem;
@@ -46,39 +45,40 @@ body {
 }
 
 .seconds {
-	margin-top: 200px;
-	padding: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	font-size: 100px;
-	text-align: center;
-	font-family: 'Courier New', Courier, monospace;
 	color: rgb(29, 27, 27);
 }
 
 .messageTimer {
-	margin-top: 100px;
-	padding: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	font-size: 25px;
-	text-align: center;
-	font-family: 'Courier New', Courier, monospace;
 	color: red;
 }
 
-.messageRandome{
+.messageRandome {
 	font-size: 50px;
 	text-align: center;
-	font-family: 'Courier New', Courier, monospace;
 	color: rgb(12, 167, 30);
 	font-weight: 800;
 }
 
 .messageOfClick {
-	margin-top: 100px;
-	padding: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	font-size: 25px;
 	text-align: center;
-	font-family: 'Courier New', Courier, monospace;
 	color: red;
 	font-weight: 900;
+	user-select: none;
 }
 
 .timerModal {
