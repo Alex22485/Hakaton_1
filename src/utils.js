@@ -106,3 +106,23 @@ export const MESSAGES = [
 	'Приятно познакомиться!',
 	'Nice to meet you!'
 ];
+
+// создание фигуры или сообщения
+export function createShapeAndMessage(shape = false, message = false) {
+	let screenWidth = window.innerWidth;
+	let screenHeight = window.innerHeight;
+	const divShapeOrMessage = document.createElement('div');
+	divShapeOrMessage.style.position = 'absolute';
+	divShapeOrMessage.style.top = `${random(150, screenHeight - 150)}px`;
+	divShapeOrMessage.style.left = `${random(200, screenWidth - 200)}px`;
+
+	if (shape) {
+		divShapeOrMessage.classList = `shape${random(0, 43)}`;
+	} else if (message) {
+		divShapeOrMessage.className = 'messageRandome';
+		divShapeOrMessage.textContent = MESSAGES[random(0, MESSAGES.length - 1)];
+		console.log('MESSAGES[random(0, MESSAGES.length - 1)]: ', MESSAGES[random(0, MESSAGES.length - 1)]);
+	};
+
+	document.body.append(divShapeOrMessage);
+};
